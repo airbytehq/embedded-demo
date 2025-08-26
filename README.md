@@ -12,8 +12,8 @@ This is a Turborepo-powered monorepo containing the Airbyte Embedded Widget demo
 ### 🔧 Setup (All Apps)
 ```bash
 # Clone and install dependencies for all apps
-git clone https://github.com/michel-tricot/embedded-test.git
-cd embedded-test
+git clone https://github.com/airbytehq/embedded-demo.git
+cd embedded-demo
 npm install
 
 # Configure server environment
@@ -164,4 +164,3 @@ Found a bug? Want to add a feature? PRs welcome!
 ---
 
 **🎉 Happy data moving!** Built with ❤️ by the Airbyte team.
-
