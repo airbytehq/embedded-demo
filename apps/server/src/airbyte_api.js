@@ -41,9 +41,7 @@ async function generateWidgetToken(externalUserId, allowedOrigin = null) {
         const accessToken = await getAccessToken();
 
         // Use provided allowedOrigin if it contains localhost, otherwise use env variable
-        const origin = allowedOrigin && allowedOrigin.includes('localhost') 
-            ? allowedOrigin 
-            : process.env.SONAR_AIRBYTE_ALLOWED_ORIGIN;
+        const origin = allowedOrigin;
 
         console.log(`Generating widget token for user ${externalUserId} with origin ${origin}`);
 
