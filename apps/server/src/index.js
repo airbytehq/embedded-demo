@@ -96,7 +96,11 @@ app.post('/api/airbyte/token', async (req, res) => {
     }
 
     try {
-        const { allowedOrigin } = req.body;
+        let { allowedOrigin } = req.body;
+        // This should only be used for localhost
+        if (allowedOrigin && !allowedOrigin.includes('localhost')) {
+            allowedOrigin = null;
+        }
         const widgetToken = await api.generateWidgetToken(req.user.email, allowedOrigin);
         res.json({ token: widgetToken });
     } catch (error) {
@@ -115,6 +119,7 @@ app.listen(port, () => {
     console.log('SONAR_AIRBYTE_CLIENT_SECRET:', process.env.SONAR_AIRBYTE_CLIENT_SECRET ? '***' : 'not set');
     console.log('SONAR_AIRBYTE_WEBAPP_PASSWORD:', process.env.SONAR_AIRBYTE_WEBAPP_PASSWORD ? '***' : 'not set');
     console.log('REDIS_URL:', process.env.REDIS_URL ? '***' : 'not set');
+    console.log('VERCEL_BRANCH_URL:', process.env.VERCEL_BRANCH_URL);
 });
 
 module.exports = app;
