@@ -113,6 +113,7 @@ app.listen(port, () => {
     console.log('SONAR_AIRBYTE_ORGANIZATION_ID:', process.env.SONAR_AIRBYTE_ORGANIZATION_ID);
     console.log('SONAR_AIRBYTE_CLIENT_ID:', process.env.SONAR_AIRBYTE_CLIENT_ID ? '***' : 'not set');
     console.log('SONAR_AIRBYTE_CLIENT_SECRET:', process.env.SONAR_AIRBYTE_CLIENT_SECRET ? '***' : 'not set');
+    console.log('SONAR_AIRBYTE_WEBAPP_PASSWORD:', process.env.SONAR_AIRBYTE_WEBAPP_PASSWORD ? '***' : 'not set');
     console.log('REDIS_URL:', process.env.REDIS_URL ? '***' : 'not set');
 });
 
