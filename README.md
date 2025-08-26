@@ -12,7 +12,7 @@ This is a Turborepo-powered monorepo containing the Airbyte Embedded Widget demo
 ### 🔧 Setup (All Apps)
 ```bash
 # Clone and install dependencies for all apps
-git clone https://github.com/airbytehq/embedded-demo.git
+git clone https://github.com/airbytehq/embedded-demoapp.git
 cd embedded-demo
 npm install
 
