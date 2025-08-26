@@ -43,7 +43,7 @@ async function generateWidgetToken(externalUserId, allowedOrigin = null) {
         let origin = allowedOrigin != null ? allowedOrigin : process.env.SONAR_AIRBYTE_ALLOWED_ORIGIN;
 
         // Make the vercel preview work
-        if (process.env.VERCEL_BRANCH_URL && process.env.VERCEL_BRANCH_URL !== '') {
+        if (process.env.VERCEL_ENV === "preview") {
             origin = `https://${process.env.VERCEL_BRANCH_URL}`;
         }
 

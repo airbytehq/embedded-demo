@@ -119,7 +119,7 @@ app.listen(port, () => {
     console.log('SONAR_AIRBYTE_CLIENT_SECRET:', process.env.SONAR_AIRBYTE_CLIENT_SECRET ? '***' : 'not set');
     console.log('SONAR_AIRBYTE_WEBAPP_PASSWORD:', process.env.SONAR_AIRBYTE_WEBAPP_PASSWORD ? '***' : 'not set');
     console.log('REDIS_URL:', process.env.REDIS_URL ? '***' : 'not set');
-    console.log('VERCEL_BRANCH_URL:', process.env.VERCEL_BRANCH_URL);
+    console.log('VERCEL_PROJECT_PRODUCTION_URL:', process.env.VERCEL_PROJECT_PRODUCTION_URL);
 });
 
 module.exports = app;
