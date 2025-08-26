@@ -40,7 +40,7 @@ async function generateWidgetToken(externalUserId, allowedOrigin = null) {
     try {
         const accessToken = await getAccessToken();
 
-        let origin = allowedOrigin!= null ? allowedOrigin : process.env.SONAR_AIRBYTE_ALLOWED_ORIGIN;
+        let origin = allowedOrigin != null ? allowedOrigin : process.env.SONAR_AIRBYTE_ALLOWED_ORIGIN;
 
         // Make the vercel preview work
         if (process.env.VERCEL_BRANCH_URL && process.env.VERCEL_BRANCH_URL !== '') {
