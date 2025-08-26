@@ -74,7 +74,7 @@ SONAR_AIRBYTE_CLIENT_SECRET=your_client_secret
 📁 embedded-test/
 ├── 📁 apps/
 │   ├── 🔧 server/           # Express.js backend (@airbyte-demo/server)
-│   ├── ⚛️  reactjs/          # React app (@airbyte-demo/reactjs)  
+│   ├── ⚛️ reactjs/          # React app (@airbyte-demo/reactjs)  
 │   └── 🚀 nextjs/           # Next.js app (@airbyte-demo/nextjs)
 ├── 📁 packages/             # Shared packages (empty for now)
 ├── 📄 package.json          # Root workspace configuration
