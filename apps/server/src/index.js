@@ -3,7 +3,6 @@ require('dotenv').config();
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const path = require('path');
-const cors = require('cors');
 
 const db = require('./db');
 const api = require('./airbyte_api');
@@ -16,8 +15,6 @@ const port = 3000;
 app.use(express.json());
 // Middleware to parse cookies
 app.use(cookieParser());
-// Middleware for cors
-app.use(cors());
 // Apply password protection to API routes
 app.use(requirePasswordForAPI);
 
@@ -99,7 +96,11 @@ app.post('/api/airbyte/token', async (req, res) => {
     }
 
     try {
-        const { allowedOrigin } = req.body;
+        let { allowedOrigin } = req.body;
+        // This should only be used for localhost
+        if (allowedOrigin && !allowedOrigin.includes('localhost')) {
+            allowedOrigin = null;
+        }
         const widgetToken = await api.generateWidgetToken(req.user.email, allowedOrigin);
         res.json({ token: widgetToken });
     } catch (error) {

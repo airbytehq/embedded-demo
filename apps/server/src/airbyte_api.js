@@ -40,8 +40,12 @@ async function generateWidgetToken(externalUserId, allowedOrigin = null) {
     try {
         const accessToken = await getAccessToken();
 
-        // Use provided allowedOrigin if it contains localhost, otherwise use env variable
-        const origin = allowedOrigin;
+        let origin = allowedOrigin!= null ? allowedOrigin : process.env.SONAR_AIRBYTE_ALLOWED_ORIGIN;
+        //
+        // // Make the vercel preview work
+        // if (process.env.VERCEL_URL && process.env.VERCEL_URL !== '') {
+        //     origin = process.env.VERCEL_URL;
+        // }
 
         console.log(`Generating widget token for user ${externalUserId} with origin ${origin}`);
 
