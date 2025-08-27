@@ -13,7 +13,7 @@ This is a Turborepo-powered monorepo containing the Airbyte Embedded Widget demo
 ```bash
 # Clone and install dependencies for all apps
 git clone https://github.com/airbytehq/embedded-demoapp.git
-cd embedded-demo
+cd embedded-demoapp
 npm install
 
 # Configure server environment
@@ -34,13 +34,13 @@ npm run dev
 ### 🎯 Run Individual Apps
 ```bash
 # Run only the server
-npm run dev --filter=@airbyte-demo/server
+npm run dev --filter=@airbyte-demoapp/server
 
 # Run only React app  
-npm run dev --filter=@airbyte-demo/reactjs
+npm run dev --filter=@airbyte-demoapp/reactjs
 
 # Run only Next.js app
-npm run dev --filter=@airbyte-demo/nextjs
+npm run dev --filter=@airbyte-demoapp/nextjs
 ```
 
 ## 🎮 Demo Flow
@@ -73,9 +73,9 @@ SONAR_AIRBYTE_CLIENT_SECRET=your_client_secret
 ```
 📁 embedded-test/
 ├── 📁 apps/
-│   ├── 🔧 server/           # Express.js backend (@airbyte-demo/server)
-│   ├── ⚛️ reactjs/          # React app (@airbyte-demo/reactjs)  
-│   └── 🚀 nextjs/           # Next.js app (@airbyte-demo/nextjs)
+│   ├── 🔧 server/           # Express.js backend (@airbyte-demoapp/server)
+│   ├── ⚛️ reactjs/          # React app (@airbyte-demoapp/reactjs)  
+│   └── 🚀 nextjs/           # Next.js app (@airbyte-demoapp/nextjs)
 ├── 📁 packages/             # Shared packages (empty for now)
 ├── 📄 package.json          # Root workspace configuration
 ├── 📄 turbo.json            # Turborepo configuration
