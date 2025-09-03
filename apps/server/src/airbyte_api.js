@@ -62,7 +62,6 @@ async function generateWidgetToken(externalUserId, allowedOrigin = null) {
                 allowed_origin: origin,
             })
         });
-        console.log("response", response);
 
         if (!response.ok) {
             const errorData = await response.json();
