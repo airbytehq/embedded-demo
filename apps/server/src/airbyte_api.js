@@ -49,7 +49,7 @@ async function generateWidgetToken(externalUserId, allowedOrigin = null) {
 
         console.log(`Generating widget token for user ${externalUserId} with origin ${origin}`);
 
-        const response = await fetch('https://api.airbyte.ai/api/v1/embedded/scoped-token', {
+        const response = await fetch('https://api.airbyte.ai/api/v1/embedded/widget-token', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${accessToken}`,
@@ -62,6 +62,7 @@ async function generateWidgetToken(externalUserId, allowedOrigin = null) {
                 allowed_origin: origin,
             })
         });
+        console.log("response", response);
 
         if (!response.ok) {
             const errorData = await response.json();
