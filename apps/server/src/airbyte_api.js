@@ -58,6 +58,7 @@ async function generateWidgetToken(externalUserId, allowedOrigin = null) {
             },
             body: JSON.stringify({
                 external_user_id: externalUserId,
+                workspace_name: externalUserId,
                 organization_id: process.env.SONAR_AIRBYTE_ORGANIZATION_ID,
                 allowed_origin: origin,
             })
